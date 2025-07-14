@@ -1,6 +1,7 @@
 package com.RenowattVendor.vendor.model;
 
 import com.RenowattVendor.User.Model.User;
+import com.RenowattVendor.project.model.Project;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -31,6 +32,8 @@ public class Vendor {
     private LocalDate dateOfIncorporation;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vendor")
     private List<User> users;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "vendor")
+    private List<Project> projects;
 
     public Integer getVendorId() {
         return vendorId;
@@ -114,5 +117,13 @@ public class Vendor {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 }

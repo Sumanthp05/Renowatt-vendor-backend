@@ -18,6 +18,9 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <mapping class="com.RenowattVendor.vendor.model.Vendor"/>
+        <mapping class="com.RenowattVendor.project.model.Project"/>
+
 
     </session-factory>
 </hibernate-configuration>
+

@@ -3,6 +3,8 @@ package com.RenowattVendor.User.Repository;
 import com.RenowattVendor.User.Model.User;
 import com.RenowattVendor.User.dtos.UserDto;
 import com.RenowattVendor.login.model.Login;
+import com.RenowattVendor.project.model.Project;
+import com.RenowattVendor.servicetype.model.ServiceType;
 import com.RenowattVendor.vendor.model.Vendor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,6 +28,8 @@ public class UserRepository {
             configuration.addAnnotatedClass(User.class);
             configuration.addAnnotatedClass(Vendor.class);
             configuration.addAnnotatedClass(Login.class);
+            configuration.addAnnotatedClass(Project.class);
+            configuration.addAnnotatedClass(ServiceType.class);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties());
@@ -49,6 +53,8 @@ public class UserRepository {
         configuration.addAnnotatedClass(Vendor.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Login.class);
+        configuration.addAnnotatedClass(Project.class);
+        configuration.addAnnotatedClass(ServiceType.class);
 
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties());

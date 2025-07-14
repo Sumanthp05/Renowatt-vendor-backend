@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan(basePackages = {
+		"com.RenowattVendor.vendor.model",
+		"com.RenowattVendor.project.model",
 		"com.RenowattVendor.User.Model",
-		"com.RenowattVendor.Vendor.model"
+		"com.RenowattVendor.ServiceType.Model"
 })
 public class RenowattVendorApplication {
 

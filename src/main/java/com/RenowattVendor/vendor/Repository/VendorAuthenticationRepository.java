@@ -2,6 +2,7 @@ package com.RenowattVendor.vendor.Repository;
 
 import com.RenowattVendor.User.Model.User;
 import com.RenowattVendor.login.model.Login;
+import com.RenowattVendor.servicetype.model.ServiceType;
 import com.RenowattVendor.vendor.dtos.VendorSignupDto;
 import com.RenowattVendor.vendor.model.Vendor;
 import org.hibernate.Session;
@@ -29,8 +30,10 @@ public class VendorAuthenticationRepository {
         try {
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
-            configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(com.RenowattVendor.project.model.Project.class);
             configuration.addAnnotatedClass(Vendor.class);
+            configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(com.RenowattVendor.servicetype.model.ServiceType.class);
             configuration.addAnnotatedClass(Login.class);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
@@ -55,8 +58,10 @@ public class VendorAuthenticationRepository {
         try {
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
+            configuration.addAnnotatedClass(com.RenowattVendor.project.model.Project.class);
             configuration.addAnnotatedClass(Vendor.class);
             configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(ServiceType.class);
             configuration.addAnnotatedClass(Login.class);
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()

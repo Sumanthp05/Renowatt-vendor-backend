@@ -3,6 +3,7 @@ package com.RenowattVendor.vendor.Services;
 import com.RenowattVendor.User.Model.User;
 import com.RenowattVendor.User.Repository.UserRepository;
 import com.RenowattVendor.User.dtos.UserDto;
+import com.RenowattVendor.errorHandler.ErrorMessage;
 import com.RenowattVendor.login.dtos.LoginDtos;
 import com.RenowattVendor.login.dtos.LoginRequestDtos;
 import com.RenowattVendor.login.dtos.LoginResponceDtos;
@@ -70,23 +71,23 @@ public class VendorAuthenticationService {
         //vendor object creation by verifying email
         Vendor vend = vendorAuthenticationRepository.SignIn(email);
         if (vend == null) {
-            throw new RuntimeException("Invalid email: Vendor not found");
+            throw new ErrorMessage("Invalid email: Vendor not found");
         }
 
         //user object
         User user = userRepository.ReturnUser(vend.getVendorId());
         if (user == null) {
-            throw new RuntimeException("User not found for vendor ID: " + vend.getVendorId());
+            throw new ErrorMessage("User not found for vendor ID: " + vend.getVendorId());
         }
 
         //login object
         Login login = loginRepository.EnterLogin(user.getUserId());
         if (login == null) {
-            throw new RuntimeException("Login not found for user ID: " + user.getUserId());
+            throw new ErrorMessage("Login not found for user ID: " + user.getUserId());
         }
 
         boolean passwordMatch = passwordEncoder.matches(password, login.getPassword());
-        if (!passwordMatch) throw new RuntimeException("Incorrect password");
+        if (!passwordMatch) throw new ErrorMessage("Incorrect password");
 
         user.setVendor(vend);
 
