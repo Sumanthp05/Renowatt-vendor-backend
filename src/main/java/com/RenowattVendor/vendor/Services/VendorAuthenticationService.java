@@ -10,6 +10,7 @@ import com.RenowattVendor.login.dtos.LoginResponceDtos;
 import com.RenowattVendor.login.model.Login;
 import com.RenowattVendor.login.repository.LoginRepository;
 import com.RenowattVendor.vendor.Repository.VendorAuthenticationRepository;
+import com.RenowattVendor.vendor.Repository.VendorRepositoryIntf;
 import com.RenowattVendor.vendor.dtos.VendorResponceDto;
 import com.RenowattVendor.vendor.dtos.VendorSignupDto;
 import com.RenowattVendor.vendor.model.Vendor;
@@ -30,6 +31,10 @@ public class VendorAuthenticationService {
     LoginRepository loginRepository;
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+
+    @Autowired
+    private VendorRepositoryIntf vendoRepositoryImpl;
+
 
 
     public VendorResponceDto SignUp(VendorSignupDto vendorSignupDto){
@@ -97,8 +102,21 @@ public class VendorAuthenticationService {
         loginResponceDtos.setUsers(user);
         return loginResponceDtos;
 
-
-
     }
+
+    public void SignUpwithjpa(VendorSignupDto vendorSignupDto){
+        Vendor vendor = new Vendor();
+        vendor.setVendorFirstName(vendorSignupDto.getVendorFirstName());
+        vendor.setVendorLastName(vendorSignupDto.getVendorLastName());
+        vendor.setEmailId(vendorSignupDto.getEmailId());
+        vendor.setPassword(vendorSignupDto.getPassword());
+        vendor.setCompanyName(vendorSignupDto.getCompanyName());
+        vendor.setCIN(vendorSignupDto.getCIN());
+        vendor.setDateOfIncorporation(vendorSignupDto.getDateOfIncorporation());
+        vendor.setRegistrationNumber(vendorSignupDto.getRegistrationNumber());
+
+        vendoRepositoryImpl.save(vendor);
+    }
+
 
 }

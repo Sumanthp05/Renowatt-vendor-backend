@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "project")
@@ -39,17 +40,17 @@ public class Project {
     @Column(name = "location")
     private String location;
     @ManyToMany(mappedBy = "projects")
-    private ArrayList<ServiceType> serviceTypes  ;
+    private List<ServiceType> serviceTypes = new ArrayList<>(); ;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vendor_id", referencedColumnName = "vendor_id", nullable = false)
     @JsonIgnore
     private Vendor vendor;
 
-    public ArrayList<ServiceType> getServiceTypes() {
+    public List<ServiceType> getServiceTypes() {
         return serviceTypes;
     }
 
-    public void setServiceTypes(ArrayList<ServiceType> serviceTypes) {
+    public void setServiceTypes(List<ServiceType> serviceTypes) {
         this.serviceTypes = serviceTypes;
     }
 

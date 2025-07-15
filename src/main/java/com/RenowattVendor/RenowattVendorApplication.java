@@ -16,6 +16,4 @@ public class RenowattVendorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RenowattVendorApplication.class, args);
 	}
-
-
 }
