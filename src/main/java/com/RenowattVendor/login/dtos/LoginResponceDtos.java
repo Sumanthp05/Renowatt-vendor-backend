@@ -5,6 +5,15 @@ import com.RenowattVendor.User.Model.User;
 public class LoginResponceDtos {
     private User users;
     private String status;
+    private String authToken;
+
+    public String getAuthToken() {
+        return authToken;
+    }
+
+    public void setAuthToken(String authToken) {
+        this.authToken = authToken;
+    }
 
     public String getStatus() {
         return status;

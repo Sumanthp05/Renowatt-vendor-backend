@@ -14,12 +14,12 @@ public class VendorAuthenticationController {
     @Autowired
     VendorAuthenticationService vendorAuthenticationService;
 
-    @PostMapping("/signup")
+    @PostMapping("/auth/signup")
     public @ResponseBody VendorResponceDto SignUp(@RequestBody VendorSignupDto vendorSignupDto){
         return vendorAuthenticationService.SignUp(vendorSignupDto);
     }
 
-    @PostMapping("/signin")
+    @PostMapping("/auth/signin")
     public @ResponseBody LoginResponceDtos SignIn(@RequestBody LoginRequestDtos loginRequestDtos){
         return vendorAuthenticationService.SignIn(loginRequestDtos);
     }

@@ -4,6 +4,7 @@ import com.RenowattVendor.errorHandler.ErrorMessage;
 import com.RenowattVendor.project.dtos.CreateProjectDto;
 import com.RenowattVendor.project.dtos.Locationdto;
 import com.RenowattVendor.project.dtos.ReturnProjectDto;
+import com.RenowattVendor.project.dtos.UpdateStatusDto;
 import com.RenowattVendor.project.model.Project;
 import com.RenowattVendor.project.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,10 @@ public class ProjectService {
         }
 
         return project;
+    }
+
+    public void UpdateStatus(UpdateStatusDto updateStatusDto){
+        Integer project_id = updateStatusDto.getProject_id();
+        Integer vendor_id = updateStatusDto.getVendor_id();
     }
 }

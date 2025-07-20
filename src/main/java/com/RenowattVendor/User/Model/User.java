@@ -11,6 +11,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Integer userId;
+    @Column(name = "email_id")
+    private String emailId;
     @Column(name = "user_f_name")
     private String userFirstName;
     @Column(name = "user_l_name")
@@ -70,5 +72,13 @@ public class User {
 
     public void setVendor(Vendor vendor) {
         this.vendor = vendor;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 }

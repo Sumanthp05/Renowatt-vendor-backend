@@ -9,7 +9,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 		"com.RenowattVendor.vendor.model",
 		"com.RenowattVendor.project.model",
 		"com.RenowattVendor.User.Model",
-		"com.RenowattVendor.ServiceType.Model"
+		"com.RenowattVendor.ServiceType.Model",
+		"com.RenowattVendor.login.model"
 })
 public class RenowattVendorApplication {
 

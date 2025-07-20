@@ -21,6 +21,7 @@ public class UserRepository {
         user.setUserLastName(userDto.getUserLastName());
         user.setDesignation(userDto.getDesignation());
         user.setEmployeeId(userDto.getEmployeeId());
+        user.setEmailId(userDto.getUserEmailId());
         //user.setVendor(userDto.getVendor());
         try {
             Configuration configuration = new Configuration();

@@ -3,6 +3,7 @@ package com.RenowattVendor.project.repository;
 import com.RenowattVendor.User.Model.User;
 import com.RenowattVendor.login.model.Login;
 import com.RenowattVendor.project.dtos.CreateProjectDto;
+import com.RenowattVendor.project.dtos.UpdateStatusDto;
 import com.RenowattVendor.project.model.Project;
 import com.RenowattVendor.servicetype.model.ServiceType;
 import com.RenowattVendor.vendor.model.Vendor;
@@ -84,5 +85,9 @@ public class ProjectRepository {
             e.printStackTrace();
         }
         return project;
+    }
+
+    public void UpdateStatus(UpdateStatusDto updateStatusDto){
+
     }
 }

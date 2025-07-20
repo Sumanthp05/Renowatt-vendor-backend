@@ -3,13 +3,14 @@ package com.RenowattVendor.User.dtos;
 import com.RenowattVendor.vendor.model.Vendor;
 
 public class UserDto {
-    private Long userId;
-    private String userFirstName;
-    private String userLastName;
-    private int employeeId;
-    private String Designation;
-    private Integer vendorId;
-    private Vendor vendor;
+        private Long userId;
+        private String userEmailId;
+        private String userFirstName;
+        private String userLastName;
+        private int employeeId;
+        private String Designation;
+        private Integer vendorId;
+        private Vendor vendor;
 
     public Vendor getVendor() {
         return vendor;
@@ -65,5 +66,13 @@ public class UserDto {
 
     public void setVendorId(Integer vendorId) {
         this.vendorId = vendorId;
+    }
+
+    public String getUserEmailId() {
+        return userEmailId;
+    }
+
+    public void setUserEmailId(String userEmailId) {
+        this.userEmailId = userEmailId;
     }
 }
